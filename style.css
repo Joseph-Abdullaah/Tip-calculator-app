@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  /* Primary */
+  --strong-cyan: hsl(172, 67%, 45%);
+
+  /* Neutral */
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --dark-grayish-cyan: hsl(186, 14%, 43%);
+  --grayish-cyan: hsl(184, 14%, 56%);
+  --light-grayish-cyan: hsl(185, 41%, 84%);
+  --very-light-grayish-cyan: hsl(189, 41%, 97%);
+  --white: hsl(0, 0%, 100%);
+
+  /* Typography */
+  --font-size-form-inputs: 2.4rem;
+  --font-family-main: 'Space Mono', monospace;
+  --font-weight-main: 700;
+}
+
+* {
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 16px */
+}
+
+body {
+    font-family: var(--font-family-main);
+    background-color: var(--light-grayish-cyan);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4rem;
+    height: 86vh;
+} 
+
+/* Card container */
+.card {
+    display: flex;
+    max-width: 92.16rem;
+    width: 100%;
+    /* width: 64%; ==>  921.6px in 1440 screen size*/ 
+    border-radius: 2.5rem;
+    padding: 3.4rem;
+    gap: 1.5rem;
+    background-color: var(--white);
+    transition: all 0.3s ease;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 20px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Input section */
+.input {
+    width: 105%;
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0 3.5rem 1.5rem 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.label-wrapper {
+    font-size: 1.5rem;
+    padding: 1rem 0; 
+    font-weight: 700;
+    color: var(--dark-grayish-cyan);
+    display: flex;
+    justify-content: space-between;
+}
+
+.not-zero {
+    color: salmon;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+}
+
+.inp-wrapper  {
+    position: relative;
+}
+
+#inp-bill, #inp-people {
+    width: 100%;
+    font-size: var(--font-size-form-inputs);
+    background-color: var(--very-light-grayish-cyan);
+    border: none;
+    padding: 0.5rem 2.4rem;
+    text-align: right;
+    color: var(--very-dark-cyan);
+    font-family: var(--font-family-main);
+    border-radius: 0.5rem;
+    outline: none;
+    font-weight: var(--font-weight-main);
+}
+
+#inp-bill:focus, #inp-people:focus{
+    border: 2px solid var(--strong-cyan);
+}
+
+
+.dollar-icon {
+    position: absolute;
+    left: 2.5rem;
+    top: 1.6rem;
+}
+
+
+.btn-wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.btn-tip, .cus-tip {
+    text-align: center;
+    font-size: 2.5rem;
+    padding: 0.6rem 0;
+    border: none ;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: var(--font-weight-main);
+}
+
+.btn-tip {
+    background-color: var(--very-dark-cyan);
+    color: var(--white);
+    transition: background-color 0.5s ease;
+}
+
+
+.btn-tip:hover {
+    background-color: var(--light-grayish-cyan);
+}
+
+.cus-tip {
+    width: 100%;
+    background-color: var(--very-light-grayish-cyan);
+    font-weight: var(--font-weight-main);
+    font-family: var(--font-family-main);
+    border: none;
+    outline: none;
+}
+
+.cus-tip:focus {
+    outline: 2px solid var(--strong-cyan);
+}
+
+.btn-wrapper .active {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.person-icon {
+    position: absolute;
+    left: 2.5rem;
+    top: 1.6rem;
+}
+
+
+
+/* Output section or Result section */
+.output {
+    width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    padding: 4rem;
+    background-color: var(--very-dark-cyan);
+    border-radius: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.line-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.line-output {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 0 24px;
+}
+
+.tip-amount, .total-amount {
+    display: flex;
+    flex-direction: column;
+}
+
+.tip-am, .total {
+    font-size: 1.6rem;
+    color: var(--white);
+    font-weight: var(--font-weight-main);
+}
+
+.per {
+    font-size: 1.3rem;
+    color: var(--grayish-cyan);
+    font-weight: var(--font-weight-main);
+}
+
+.tip-amount-value, .total-amount-value {
+    font-size: 4.6rem;
+    color: var(--strong-cyan);
+    font-weight: var(--font-weight-main);
+}
+
+#reset-btn {
+    background-color: var(--strong-cyan);
+    color: var(--very-dark-cyan);
+    font-size: 2rem;
+    font-family: var(--font-family-main);
+    border: none;
+    border-radius: 0.5rem;
+    padding: 1rem 0;
+    color: var(--very-dark-cyan);
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 3.4rem;
+    transition: all 0.4s ease;
+}
+
+#reset-btn:hover {
+    background-color: var(--light-grayish-cyan);
+    cursor: pointer;
+}
+
+
+@media (max-width: 800px) {
+
+
+    body {
+        display: flex;
+        justify-content: center;
+        height: auto;
+    }
+     
+    .logo {
+        margin-top: 5rem;
+    }
+
+    .card {
+        flex-direction: column;
+        padding: 3.4rem;
+    }
+
+    .input, .output {
+        width: 100%;
+    }
+
+
+    .output {
+        padding: 2.2rem;
+    }
+
+    .btn-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .tip-amount-value, .total-amount-value {
+        font-size: 3rem;
+    }
+}
